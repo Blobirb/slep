@@ -1,0 +1,44 @@
+/* All margins and padding must be zero for the canvas to fill the screen. */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	background: #000;
+	color: #fff;
+	overflow: hidden;
+	touch-action-delay: none;
+	touch-action: none;
+	-ms-touch-action: none;
+}
+
+canvas {
+	touch-action-delay: none;
+	touch-action: none;
+	-ms-touch-action: none;
+}
+
+.practice-data {
+	position: fixed;
+	width: 100%;
+	background-color: #2121218c;
+	font-weight: bold;
+	font-size: 40px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding: 5px;
+
+	user-select: none;
+}
+
+.practice-data div {
+	display: inline-block;
+}
+
+.fps-counter {
+	float: right;
+	margin-right: 10px;
+}
