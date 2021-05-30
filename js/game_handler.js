@@ -74,6 +74,8 @@ _gameHandler = (function () {
 	});
 
 	$(document).keydown(function (e) {
+		if (!state.in_level) return;
+
 		// ESC key, to move to main menu
 		if (e.key === "Escape") {
 			moveToLevel(0);
