@@ -20,7 +20,11 @@ canvas {
 	-ms-touch-action: none;
 }
 
-.practice-data {
+.data-number {
+	color: rgb(0, 173, 0);
+}
+
+.autosplitter-data {
 	position: fixed;
 	width: 100%;
 	background-color: #2121218c;
@@ -34,7 +38,7 @@ canvas {
 	user-select: none;
 }
 
-.practice-data div {
+.autosplitter-data div {
 	display: inline-block;
 }
 

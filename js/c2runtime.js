@@ -2894,7 +2894,7 @@ function mc(d, m, p, r) {
         }
 
         // AUTOSPLITTER 1 - on changing the canvas size
-		_gameHandler.onCanvasResize();
+		_autosplitter.onCanvasResize();
     }
     ;
     d.prototype.ou = function() {
@@ -3525,7 +3525,7 @@ function mc(d, m, p, r) {
         this.cf.add(c);
 
         // AUTOSPLITTER 2 - game loop top level - after calculating time in this frame
-        _gameHandler.onUpdate(this.bg);
+        _autosplitter.onUpdate(this.bg);
         
         a = (document.mozFullScreen || document.webkitIsFullScreen || document.fullScreen || !!document.msFullscreenElement || this.Xi) && !this.De;
         2 <= this.zc || a && 0 < this.jg ? (c = this.lb / this.kb,
@@ -3618,7 +3618,7 @@ function mc(d, m, p, r) {
     ;
     d.prototype.sr = function(a) {
         // AUTOSPLITTER 3 - On starting a new level
-        _gameHandler.onScene(a.name);
+        _autosplitter.onScene(a.name);
         
         var c = this.na;
         this.na.zA();
@@ -10542,6 +10542,10 @@ function rc(d) {
     ;
     N.j = new O;
     Q.prototype.Play = function(a, b, c, e) {
+        // AUTOSPLITTER 4 - on playing a sound file
+		var soundName = a[0];
+        _autosplitter.onSound(soundName);
+        
         !J && (c = n(c),
         L = this.Jr(this.b.Zn + a[0] + (S ? ".ogg" : ".m4a"), e, a[1], 0 !== b, c)) && (L.Pp(!1),
         L.play(0 !== b, c, 0, this.Us),

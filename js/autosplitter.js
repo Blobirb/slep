@@ -1,4 +1,4 @@
-_gameHandler = (function () {
+_autosplitter = (function () {
     var state = {
 		level: NaN,
         in_menu: true,
@@ -12,7 +12,9 @@ _gameHandler = (function () {
 	var moveToLevel = function (level) {
 		window.game.sr(window.game.Qc[level]);
     };
-    
+	
+	var onSound = function (soundName) {}
+
     /*
 	Callback function after any level layout is changed (we refresh or enter or a new screen)
 	*/
@@ -46,8 +48,7 @@ _gameHandler = (function () {
 		var canvas_marginTop = parseInt($canvas.css("margin-top"));
 		var canvas_marginLeft = parseInt($canvas.css("margin-left"));
 
-        debugger;
-		$("#practice_data")
+		$("#autosplitter_data")
 			.width(canvas_w - 10)
 			.css("left", canvas_marginLeft + "px")
 			.css("bottom", canvas_marginTop + "px")
@@ -83,6 +84,7 @@ _gameHandler = (function () {
     });
     
     return {
+		onSound: onSound,
 		onScene: onScene,
 		onUpdate: onUpdate,
 		onCanvasResize: onCanvasResize,
