@@ -71,6 +71,13 @@ _gameHandler = (function () {
 		if (e.which == 45 && state.level > 1) {
 			moveToLevel(state.level - 1);
 		}
+	});
+
+	$(document).keydown(function (e) {
+		// ESC key, to move to main menu
+		if (e.key === "Escape") {
+			moveToLevel(0);
+		}
     });
     
     return {
