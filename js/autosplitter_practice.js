@@ -1,24 +1,6 @@
 _autosplitter = (function () {
 	var chestsInLevel = [1, 3, 2, 1, 2, 2, 3, 2, 2, 2, 2, 3, 2, 2, 2];
 
-	var wrs = [
-		"1.967",
-		"5.700",
-		"4.550",
-		"5.383",
-		"9.567",
-		"3.067",
-		"7.200",
-		"6.933",
-		"8.300",
-		"4.067",
-		"12.400",
-		"13.033",
-		"22.100",
-		"10.833",
-		"17.817",
-	];
-
 	var decimal_places_display = 3;
 	
 	var state = {
@@ -79,7 +61,7 @@ _autosplitter = (function () {
 			// Set relevant data for the current level
 			state.levelTime = 0;
 			document.getElementById("level_timer").innerText = (0).toFixed(decimal_places_display);
-			document.getElementById("level_wr").innerText = wrs[state.level - 1];
+			document.getElementById("level_wr").innerText = _wrs.getTimes()[state.level - 1];
 		}
 
 		$("#practice_mode_data").toggle(state.in_level);
