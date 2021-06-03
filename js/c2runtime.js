@@ -2970,6 +2970,25 @@ function mc(d, m, p, r) {
     d.prototype.nj = function(a) {
         a && a.project || ia("Project model unavailable");
         a = a.project;
+
+        // autosplitter 5 - change tilemap to practice version
+        if (PRACTICE_MODE) {
+            a[3][0][6][0] = "images/tilemapbg_practice.png";
+            a[3][1][6][0] = "images/tilemapbg_practice.png";
+        }
+
+        if (SPEEDRUN_MODE) {
+            // The text of the "Play" button
+            a[5][0][6][2][14][1][5][3] = "Run";
+            // The "left" position of the button text
+            a[5][0][6][2][14][1][0][0] = 132;
+
+            // Remove the clickable area of the "Continue" button
+            a[5][0][6][1][14].splice(1, 1);
+            // Remove the "Continue" button text
+            a[5][0][6][2][14].splice(2, 1);
+        }
+
         this.name = a[0];
         this.Fr = a[1];
         this.zc = a[12];
