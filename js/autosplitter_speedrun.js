@@ -80,7 +80,10 @@ _autosplitter = (function () {
 			// Set relevant data for the current level
 			state.levelTime = 0;
 			document.getElementById("level_timer").innerText = (0).toFixed(decimal_places_display);
-			document.getElementById("level_wr").innerText = _wrs.getTimes()[state.level - 1];
+
+			wrTimes = _wrs.getTimes();
+			document.getElementById("level_wr_title").innerText = wrTimes.title;
+			document.getElementById("level_wr").innerText = wrTimes.wrs[state.level - 1];
 
 			// Start a timer for new speedrun, in case we entered or refreshed level 1
 			if (state.level == 1) {
